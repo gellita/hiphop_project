@@ -1,6 +1,6 @@
-import './Footer.sass'
+import './index.module.sass'
 
-function Footer(){
+function Index(){
     return(
         <footer>
             <div className="footer_content">
@@ -20,4 +20,4 @@ function Footer(){
     )
 }
 
-export default Footer
+export default Index

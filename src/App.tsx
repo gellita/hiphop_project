@@ -1,5 +1,5 @@
 import './App.css'
-import Footer from "./components/footer/Footer.tsx";
+import Index from "./components/Footer";
 
 function App() {
 
@@ -7,7 +7,7 @@ function App() {
     <>
 
 
-        <Footer/>
+        <Index/>
     </>
   )
 }
