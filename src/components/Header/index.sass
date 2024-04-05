@@ -1,0 +1,110 @@
+@font-face
+  font-family: WebFont
+  src: url('/src/assets/Fonts/Inter-ExtraBold.ttf')
+
+$yellow: #FFD300
+$gray: #2C2C2C
+
+body
+  font-family: WebFont, serif
+
+//здесь точно надо будет задать position
+.header
+  display: flex
+  justify-content: center
+  background-color: $gray
+  padding: 20px
+
+
+
+.header__nav
+  height: 59px
+  width: 100%
+  display: flex
+  justify-content: space-between
+  padding: 20px
+  background-color: white
+
+.header__nav__btn
+  width: 30%
+  height: 100%
+  display: flex
+  justify-content: flex-end
+  font-weight: 20
+  align-items: center
+
+
+.header__nav__btn__battles
+  margin: 0 20px
+  display: flex
+  align-items: center
+
+.header__nav__btn__calendar
+  margin: 0 20px
+  display: flex
+  align-items: center
+
+.battles__menu
+  width: 0
+  height: 0
+  border-top: 8px solid transparent
+  border-bottom: 8px solid transparent
+  border-left: 16px solid $gray
+  margin:  0 10px
+
+.battles__submenu
+  display: none
+
+//временно
+.logo
+  background-color: $yellow
+  width: 160px
+  height: 60px
+  border-radius: 10px
+
+
+
+
+//выпадающее меню
+.dropbtn
+  padding: 16px
+  border: none
+
+.dropdown
+  position: relative
+  display: inline-block
+  cursor: pointer
+
+.dropdown-content
+  display: none
+  position: absolute
+  background-color: $yellow
+  min-width: 160px
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
+  z-index: 1
+  border-radius: 10px
+
+
+.dropdown-content a
+  color: black
+  padding: 12px 16px
+  text-decoration: none
+  display: block
+
+
+.dropdown-content a:hover
+  transform: scale(1.05)
+
+
+.dropdown:hover .dropdown-content
+  display: block
+
+
+
+
+
+
+
+
+
+

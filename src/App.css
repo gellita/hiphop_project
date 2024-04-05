@@ -49,3 +49,6 @@ body{
 .footer{
     display: flex;
 }
+li {
+    list-style-type: none;
+}
