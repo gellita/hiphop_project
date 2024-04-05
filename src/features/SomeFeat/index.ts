@@ -1,1 +1,1 @@
-import { Button, Footer } from '@/components'
+// import { Button, Footer } from '@/components'

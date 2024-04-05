@@ -1,6 +1,6 @@
-import './index.module.sass'
+import './index.sass'
 
-function Index(){
+export const Footer = () =>{
     return(
         <footer>
             <div className="footer_content">
@@ -20,4 +20,3 @@ function Index(){
     )
 }
 
-export default Index
