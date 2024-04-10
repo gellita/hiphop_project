@@ -11,10 +11,16 @@ export const Footer = () =>{
                     </ul>
                 </div>
                 <div className="footer_content_socialmedia">
-
+                    <ul className="footer_content_socialmedia-item">Контакты
+                        <li className="footer_content_socialmedia-item-vk"><a href="https://vk.com/chto_tebe_nadoa"><img src="./src/assets/Images/Icons/vkontakte.svg"/></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div className="footer_bottom">
+                <div className="footer_bottom-prjinfo">
+                    ©2024
+                </div>
             </div>
         </footer>
     )
