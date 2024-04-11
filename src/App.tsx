@@ -9,11 +9,12 @@ function App() {
   return (
     <>
         <Header/>
-        <Footer/>
-
         <Routes>
             <Route path="/battles" element={<Battle1x1/>}/>
         </Routes>
+        <Footer/>
+
+
     </>
 
   )
