@@ -13,7 +13,7 @@ export const Header = () => {
                         <Link to="" className="dropbtn">Баттлы</Link>
                         <div className="dropdown-content">
                             <Link to="#">Селекты</Link>
-                            <Link to="/Battle1x1">Баттлы 1х1</Link>
+                            <Link to="/battles">Баттлы 1х1</Link>
                             <Link to="/BattleGrid">Турнирная таблица</Link>
                         </div>
                     </div>
