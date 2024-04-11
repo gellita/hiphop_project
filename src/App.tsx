@@ -1,5 +1,5 @@
 import './App.css'
-import {Routes, Route,Link} from 'react-router-dom'
+import {Routes, Route} from 'react-router-dom'
 import {Header,Footer} from './components'
 
 import {Battle1x1} from './pages/Battle1x1'

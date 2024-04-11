@@ -2,6 +2,7 @@ import './index.sass'
 
 export const Footer = () =>{
     return(
+
         <footer>
             <div className="footer_content">
                 <div className="footer_content_logo">
