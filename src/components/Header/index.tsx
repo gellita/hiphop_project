@@ -1,9 +1,9 @@
-import './index.sass'
+import styles from './index.module.sass'
 import {Link} from 'react-router-dom'
 
 export const Header = () => {
     return (
-        <header className="header">
+        <header className={styles.header}>
             <nav className="header__nav">
                 {/*комонент лого, пока просто div logo*/}
                 {/*<Logo/>*/}

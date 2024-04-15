@@ -1,25 +1,25 @@
-import './index.sass'
+import styles from './index.module.sass'
 
 export const Footer = () =>{
     return(
 
         <footer>
-            <div className="footer_content">
-                <div className="footer_content_logo">
-                    <ul className="footer_content_logo-item">
-                        <li className="footer_content_logo-item-title">HIP-HOP</li>
-                        <li className="footer_content_logo-item-article">chronicles</li>
+            <div className={styles.footer_content}>
+                <div className={styles.footer_content_logo}>
+                    <ul className={styles.footer_content_logo_item}>
+                        <li className={styles.footer_content_logo_item_title}>HIP-HOP</li>
+                        <li className={styles.footer_content_logo_item_article}>chronicles</li>
                     </ul>
                 </div>
-                <div className="footer_content_socialmedia">
-                    <ul className="footer_content_socialmedia-item">Контакты
-                        <li className="footer_content_socialmedia-item-vk"><a href="https://vk.com/chto_tebe_nadoa"><img src="./src/assets/Images/Icons/vkontakte.svg"/></a>
+                <div className={styles.footer_content_socialmedia}>
+                    <ul className={styles.footer_content_socialmedia_item}>Контакты
+                        <li className={styles.footer_content_socialmedia_item_vk}><a href="https://vk.com/chto_tebe_nadoa"><img src="./src/assets/Images/Icons/vkontakte.svg"/></a>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div className="footer_bottom">
-                <div className="footer_bottom-prjinfo">
+            <div className={styles.footer_bottom}>
+                <div className={styles.footer_bottom_prjinfo}>
                     ©2024
                 </div>
             </div>
