@@ -1,9 +1,14 @@
-import './index.sass'
+import styles from  './index.sass'
 import {Link} from 'react-router-dom'
+import cn from 'classnames'
+interface Props {
+    reverse?: boolean;
+}
 
-export const Header = () => {
+export const Header = (props: Props) => {
+    const { reverse = false } = props;
     return (
-        <header className="header">
+        <header className={cn(styles.header, {[styles.header_reverse]: reverse })}>
             <nav className="header__nav">
                 {/*комонент лого, пока просто div logo*/}
                 {/*<Logo/>*/}
