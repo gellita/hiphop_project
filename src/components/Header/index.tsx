@@ -6,10 +6,9 @@ interface Props {
 }
 
 export const Header = (props: Props) => {
-    const { reverse = false } = props;
+    const {reverse = false } = props;
     return (
         <header className={cn(styles.header, {[styles.header_reverse]: reverse })}>
-
             <nav className="header__nav">
                 {/*комонент лого, пока просто div logo*/}
                 {/*<Logo/>*/}
@@ -17,7 +16,7 @@ export const Header = (props: Props) => {
                 <div className="header__nav__btn">
                     <div className="dropdown">
                         <Link to="" className="dropbtn">Баттлы</Link>
-                        <div className="dropdown-content">
+                        <div className="dropdown__content">
                             <Link to="#">Селекты</Link>
                             <Link to="/battles">Баттлы 1х1</Link>
                             <Link to="/BattleGrid">Турнирная таблица</Link>
