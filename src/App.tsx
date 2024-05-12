@@ -6,13 +6,14 @@ import {Battle1x1} from './pages/index.ts'
 import {useState} from "react";
 
 function App() {
-    const [reverse, setReverse] = useState(false);
-
-    const location = useLocation();
+    // const [reverse, setReverse] = useState(false);
+    //
+    // const location = useLocation();
 
   return (
     <>
-        <Header reverse={reverse}/>
+        {/*<Header reverse={reverse}/>*/}
+        <Header/>
         <Routes>
             <Route path="/battles" element={<Battle1x1/>}/>
         </Routes>
