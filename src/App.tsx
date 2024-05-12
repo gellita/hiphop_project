@@ -1,25 +1,27 @@
 import './App.css'
 import {Routes, Route, useLocation} from 'react-router-dom'
-import {Header,Footer} from './components'
+import {Header, Footer} from './components'
 
-import {Battle1x1} from './pages'
+
+import {Battle1x1, HomePage} from './pages'
 import {useState} from "react";
 
 function App() {
-    const [reverse, setReverse] = useState(false);
-
-    const location = useLocation();
+    // const [reverse, setReverse] = useState(false);
+    //
+    // const location = useLocation();
 
   return (
-    <>
-        <Header reverse={reverse}/>
-        <Routes>
-            <Route path="/battles" element={<Battle1x1/>}/>
-        </Routes>
-        <Footer/>
+      <>
+          <Header/>
+          <HomePage/>
+          <Routes>
+              <Route path="/battles" element={<Battle1x1/>}/>
+          </Routes>
+          <Footer/>
+      </>
 
 
-    </>
 
   )
 }

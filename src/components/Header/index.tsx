@@ -15,7 +15,12 @@ export const Header = (props: Props) => {
             <nav className={styles.header__nav}>
                 {/*комонент лого, пока просто div logo*/}
                 {/*<Logo/>*/}
-                <Link to="/" className={styles.logo}></Link>
+                <Link to="/" className={styles.logo}>
+                    <div className={styles.logo__text}>
+                        <div className={styles.logo__text__hh}>HIP-HOP</div>
+                        <div className={styles.logo__text__ch}>chronicles</div>
+                    </div>
+                </Link>
                 <div className={styles.header__nav__btn}>
                     <div className={styles.dropdown}>
                         <Link to="" className={styles.dropbtn}>Баттлы</Link>
