@@ -3,10 +3,13 @@
   src: url('/src/assets/Fonts/Inter-ExtraBold.ttf')
 
 $yellow: #FFD300
+$gray: #2C2C2C
 
 
 footer
-  background-color: #2C2C2C
+  background-color: $yellow
+  width: 85vw
+  margin: 10px 0
 
 
 //li
@@ -14,7 +17,7 @@ footer
 
 .footer_content
   display: flex
-  justify-content: space-around
+  justify-content: space-between
 
 
 .footer_content_logo_item_title, .footer_content_logo_item_article
@@ -23,12 +26,13 @@ footer
 
 .footer_content_logo_item_title
   font-size: 100px
-  color: #FFFFFF
+  color: white
+
 
 
 .footer_content_logo_item_article
   font-size: 63px
-  color: $yellow
+  color: $gray
 
 .footer_content_socialmedia
   display: flex
@@ -36,7 +40,7 @@ footer
 
 .footer_content_socialmedia_item, .footer_content_socialmedia_item_vk
   font-size: 14px
-  width: 24px
+//  width: 24px
 
 .footer_bottom
   border-top: 2px solid black
