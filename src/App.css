@@ -60,3 +60,11 @@ img{
     margin: 0;
     padding: 0;
 }
+a {
+    text-decoration: none;
+    color: var(--gray);
+}
+:root {
+    --yellow: #FFD300;
+    --gray: #2C2C2C;
+}

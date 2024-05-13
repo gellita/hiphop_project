@@ -1,11 +1,16 @@
 import './App.css'
-import {Routes, Route} from 'react-router-dom'
-import {Header,Footer} from './components'
+import {Routes, Route, useLocation} from 'react-router-dom'
+import {Header, Footer} from './components'
 
-import {Battle1x1, Calendar} from './pages'
-// import {useEffect, useState} from "react";
+
+import {Battle1x1, HomePage, BattleGrid, Calendar} from './pages'
+// import {useState} from "react"
+
 
 function App() {
+    // const [reverse, setReverse] = useState(false);
+    //
+    // const location = useLocation();
 
     // const [state, setState] = useState(null);
     //
@@ -27,18 +32,23 @@ function App() {
     // }, [])
 
   return (
-    <>
-        <Header/>
-        <Routes>
-            <Route path="/battles" element={<Battle1x1/>}/>
-            <Route path="/calendar" element={<Calendar/>}/>
-        </Routes>
-        <Footer/>
-        {/*<div>*/}
-        {/*    {state}*/}
-        {/*</div>*/}
 
-    </>
+
+      <>
+          {/*<Header reverse={reverse}/>*/}
+          <Header/>
+          <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/battles" element={<Battle1x1/>}/>
+              <Route path="/BattleGrid" element={<BattleGrid/>}/>
+              <Route path="/Calendar" element={<Calendar/>}/>
+
+          </Routes>
+          <Footer/>
+      </>
+
+
+
 
   )
 }

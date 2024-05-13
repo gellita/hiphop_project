@@ -8,12 +8,17 @@ $gray: #2C2C2C
 body
   font-family: WebFont, serif
 
+
 //здесь точно надо будет задать position
 .header
   display: flex
   justify-content: center
   background-color: $gray
-  padding: 20px
+  padding: 10px 0
+
+  &_reverse
+    color: white
+    background-color: red
 
 
 
@@ -22,7 +27,7 @@ body
   width: 100%
   display: flex
   justify-content: space-between
-  padding: 20px
+  padding: 10px
   background-color: white
 
 .header__nav__btn
@@ -61,8 +66,15 @@ body
   width: 160px
   height: 60px
   border-radius: 10px
+  padding-left: 10px
 
+.logo__text__hh
+  color: white
+  font-size: 30px
 
+.logo__text__ch
+  color: $gray
+  font-size: 20px
 
 
 //выпадающее меню
@@ -98,6 +110,9 @@ body
 
 .dropdown:hover .dropdown__content
   display: block
+
+.nav__text
+  color: #2C2C2C
 
 
 
