@@ -3,7 +3,7 @@ import {Routes, Route, useLocation} from 'react-router-dom'
 import {Header, Footer} from './components'
 
 
-import {Battle1x1, HomePage} from './pages'
+import {Battle1x1, HomePage, BattleGrid, Calendar} from './pages'
 import {useState} from "react";
 
 function App() {
@@ -14,9 +14,12 @@ function App() {
   return (
       <>
           <Header/>
-          <HomePage/>
           <Routes>
+              <Route path="/" element={<HomePage />} />
               <Route path="/battles" element={<Battle1x1/>}/>
+              <Route path="/BattleGrid" element={<BattleGrid/>}/>
+              <Route path="/Calendar" element={<Calendar/>}/>
+
           </Routes>
           <Footer/>
       </>
