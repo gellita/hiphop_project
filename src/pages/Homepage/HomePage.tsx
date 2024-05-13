@@ -6,7 +6,7 @@ export const HomePage = () => {
             <div className={styles.home}>
 
                 <div className={styles.background}>
-                    <img src="./src/assets/Images/homepage/background.jpg" className={styles.home__backimg} alt="background image"/>
+                    <img src="./src/assets/Images/homepage/background_new.jpg" className={styles.home__backimg} alt="background image"/>
                     <img src="./src/assets/Images/homepage/vector.png" className={styles.home__vectorimg} alt = "vector image"/>
                 </div>
                 <div className={styles.home__text}>
