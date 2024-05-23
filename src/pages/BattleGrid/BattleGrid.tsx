@@ -47,6 +47,7 @@ export const BattleGrid = () => {
                     </div>
                 </div>
             </div>
+
             <div id="tree" className={styles.tree}>
                 <div className={styles.entry}><span>Player Final</span>
                     <div className={styles.branch}>
@@ -85,15 +86,14 @@ export const BattleGrid = () => {
                     </div>
                 </div>
             </div>
+            <input
+                type="text"
+                value={player1}
+                onChange={(e) => setPlayer1(e.target.value)}
+                placeholder="Enter Player 1"
+            />
         </div>
-        {/*    <div className={styles.battlegrid}>*/}
-        {/*        <input*/}
-        {/*            type="text"*/}
-        {/*            value={player1}*/}
-        {/*            onChange={(e) => setPlayer1(e.target.value)}*/}
-        {/*            placeholder="Enter Player 1"*/}
-        {/*        />*/}
-        {/*</div>*/}
+
         </div>
     );
 };
