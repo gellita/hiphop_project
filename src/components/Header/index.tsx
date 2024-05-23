@@ -1,13 +1,37 @@
 
 import styles from './index.module.sass'
 import {Link} from 'react-router-dom'
+import {useEffect, useState} from "react";
+import * as AuthService from "../../services/auth.service";
+import EventBus from "../../common/EventBus.ts";
 // import classNames from 'classnames'
 interface Props {
     reverse?: boolean;
 }
 
 export const Header = (props: Props) => {
-    // const { reverse = false } = props;
+    const [showAdminBoard, setShowAdminBoard] = useState<boolean>(false);
+
+
+
+    useEffect(() => {
+        const user = AuthService.getCurrentUser();
+
+        if (user) {
+            setShowAdminBoard(user.roles.includes("ROLE_ADMIN"));
+        }
+
+        EventBus.on("logout", logOut);
+
+        return () => {
+            EventBus.remove("logout", logOut);
+        };
+    }, []);
+
+    const logOut = () => {
+        AuthService.logout();
+        setShowAdminBoard(false);
+    };
     return (
         <header className={styles.header}>
              {/*<header className = classNames(styles.header, {[styles.header_reverse]: reverse })>*/}
@@ -19,6 +43,14 @@ export const Header = (props: Props) => {
                         <div className={styles.logo__text__ch}>chronicles</div>
                     </div>
                 </Link>
+
+                {showAdminBoard && (
+                    <li className="nav-item">
+                        <Link to={"/admin"} className="nav-link">
+                            Сетка для МС
+                        </Link>
+                    </li>
+                )}
 
                 <div className={styles.header__nav__btn}>
                     <div className={styles.dropdown}>
