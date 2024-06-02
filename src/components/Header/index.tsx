@@ -6,12 +6,10 @@ interface Props {
     reverse?: boolean;
 }
 
-export const Header = (props: Props) => {
+export const Header = () => {
     // const { reverse = false } = props;
     return (
         <header className={styles.header}>
-             {/*<header className = classNames(styles.header, {[styles.header_reverse]: reverse })>*/}
-
             <nav className={styles.header__nav}>
                 <Link to="/" className={styles.logo}>
                     <div className={styles.logo__text}>
