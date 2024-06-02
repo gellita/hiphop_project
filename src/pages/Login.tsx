@@ -7,7 +7,7 @@ import { login } from "../services/auth.service";
 
 type Props = {}
 
-const Login: React.FC<Props> = () => {
+export const Login = (props: Props) => {
     const navigate: NavigateFunction = useNavigate();
 
     const [loading, setLoading] = useState<boolean>(false);
@@ -34,7 +34,7 @@ const Login: React.FC<Props> = () => {
 
         login(username, password).then(
             () => {
-                navigate("/profile");
+                navigate("/");
                 window.location.reload();
             },
             (error) => {
@@ -52,13 +52,8 @@ const Login: React.FC<Props> = () => {
     };
 
     return (
-        <div className="col-md-12">
-            <div className="card card-container">
-                <img
-                    src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-                    alt="profile-img"
-                    className="profile-img-card"
-                />
+        <div className="login">
+            <div className="login card-container">
                 <Formik
                     initialValues={initialValues}
                     validationSchema={validationSchema}
@@ -86,7 +81,7 @@ const Login: React.FC<Props> = () => {
                         </div>
 
                         <div className="form-group">
-                            <button type="submit" className="btn btn-primary btn-block" disabled={loading}>
+                            <button type="submit" className="login_btn" disabled={loading}>
                                 {loading && (
                                     <span className="spinner-border spinner-border-sm"></span>
                                 )}
@@ -96,7 +91,7 @@ const Login: React.FC<Props> = () => {
 
                         {message && (
                             <div className="form-group">
-                                <div className="alert alert-danger" role="alert">
+                                <div className="alert alert-danger">
                                     {message}
                                 </div>
                             </div>
@@ -108,4 +103,3 @@ const Login: React.FC<Props> = () => {
     );
 };
 
-export default Login;

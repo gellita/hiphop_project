@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import {BattleGrid} from "./BattleGrid/BattleGrid.tsx";
 
 import { getAdminBoard } from "../services/user.service";
 
-const AdminPage: React.FC = () => {
+
+
+export const AdminPage = () => {
     const [content, setContent] = useState<string>("");
 
     useEffect(() => {
@@ -23,13 +26,17 @@ const AdminPage: React.FC = () => {
         );
     }, []);
 
-    return (
+    if (content == "Access is allowed"){
+       return( <BattleGrid/>);
+    }
+    else {return (
         <div className="container">
             <header className="jumbotron">
                 <h3>{content}</h3>
             </header>
         </div>
-    );
+    );}
+
+
 };
 
-export default AdminPage;

@@ -44,15 +44,18 @@ export const Header = (props: Props) => {
                     </div>
                 </Link>
 
-                {showAdminBoard && (
-                    <li className="nav-item">
-                        <Link to={"/admin"} className="nav-link">
-                            Сетка для МС
-                        </Link>
-                    </li>
-                )}
+
+
+
 
                 <div className={styles.header__nav__btn}>
+                    {showAdminBoard && (<div className={styles.dropdown}>
+                        <Link to="" className={styles.dropbtn}>Для МС</Link>
+                        <div className={styles.dropdown__content}>
+                            {showAdminBoard && (<Link to="/admin">Сетка для МС</Link>)}
+                            <a href="/" className="nav-link" onClick={logOut}>Выйти из аккаунта</a>
+                        </div>
+                    </div>)}
                     <div className={styles.dropdown}>
                         <Link to="" className={styles.dropbtn}>Баттлы</Link>
                         <div className={styles.dropdown__content}>

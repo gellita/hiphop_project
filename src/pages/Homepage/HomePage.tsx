@@ -1,4 +1,5 @@
 import styles from './index.module.sass'
+import {Carousel} from "../../components";
 export const HomePage = () => {
     return(
 
@@ -16,6 +17,7 @@ export const HomePage = () => {
 
             </div>
             <div className={styles.gallery}>
+                <Carousel/>
                 <div className={styles.gallery__collage}>
                     <img src="./src/assets/Images/homepage/dancer1.png" alt = "dancer"/>
                     <img src="./src/assets/Images/homepage/dancer2.png" alt = "dancer"/>

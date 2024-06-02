@@ -67,3 +67,9 @@ a {
     --yellow: #FFD300;
     --gray: #2C2C2C;
 }
+
+header{
+    position: sticky;
+    z-index: 2;
+    top: 1px
+}

@@ -3,9 +3,7 @@ import {Routes, Route, useLocation} from 'react-router-dom'
 import {Header, Footer} from './components'
 
 
-import {Battle1x1, HomePage, BattleGrid, Calendar} from './pages'
-import AdminPage from "./pages/AdminPage.tsx";
-import Login from "./pages/Login.tsx"
+import {Battle1x1, HomePage, BattleGrid, Calendar, Login, AdminPage} from './pages'
 // import {useState} from "react"
 
 
