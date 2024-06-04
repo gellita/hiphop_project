@@ -3,7 +3,7 @@ import {Routes, Route, useLocation} from 'react-router-dom'
 import {Header, Footer} from './components'
 
 
-import {Timer, HomePage, BattleGrid, Calendar, Login, AdminPage} from './pages'
+import {Timer, HomePage, BattleGrid, Calendarr, Login, AdminPage} from './pages'
 // import {useState} from "react"
 
 
@@ -19,7 +19,7 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/battles" element={<Timer/>}/>
               <Route path="/BattleGrid" element={<BattleGrid/>}/>
-              <Route path="/Calendar" element={<Calendar/>}/>
+              <Route path="/Calendar" element={<Calendarr/>}/>
               <Route path="/admin" element={<AdminPage/>} />
               <Route path="/login" element={<Login />} />
           </Routes>

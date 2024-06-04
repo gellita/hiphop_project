@@ -246,7 +246,6 @@ export const BattleGrid = () => {
                                                 </span>
                                             </div>
                                         </div>
-                                        ,
                                     </div>
                                 </div>
                             </div>

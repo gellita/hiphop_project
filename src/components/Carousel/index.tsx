@@ -18,7 +18,8 @@ export function Carousel(){
         slidesToScroll: 2,
         speed: 1000,
         arrows: false,
-        className: "slider"
+        className: "slider",
+        swipeToSlide: true
     };
 
     return (
