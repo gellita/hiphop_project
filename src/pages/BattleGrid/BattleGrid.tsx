@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import styles from './index.module.sass';
+import {Timer} from "../../components";
 
 export const BattleGrid = () => {
     const [inputValues, setInputValues] = useState<{ [key: string]: string }>({
@@ -37,7 +38,7 @@ export const BattleGrid = () => {
     });
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const { id, value } = event.target;
+        const {id, value} = event.target;
         setInputValues((prevValues) => ({
             ...prevValues,
             [id]: value,
@@ -53,6 +54,7 @@ export const BattleGrid = () => {
 
     return (
         <div className={styles.battlegrid}>
+        <Timer/>
             <div className={styles.trees}>
                 <div id="mirror_tree" className={styles.mirror_tree}>
                     <div className={styles.branch}>
@@ -67,12 +69,12 @@ export const BattleGrid = () => {
                                             <div className={styles.branch}>
                                                 <div className={styles.mirror__entry}>
                                                     <span>
-                                                        <input id="dancer" type="text" placeholder="input" />
+                                                        <input id="dancer" type="text" placeholder="input"/>
                                                     </span>
                                                 </div>
                                                 <div className={styles.mirror__entry}>
                                                     <span>
-                                                        <input type="text" placeholder="input" />
+                                                        <input type="text" placeholder="input"/>
                                                     </span>
                                                 </div>
                                             </div>
@@ -82,12 +84,12 @@ export const BattleGrid = () => {
                                             <div className={styles.branch}>
                                                 <div className={styles.mirror__entry}>
                                                     <span>
-                                                        <input type="text" placeholder="input" />
+                                                        <input type="text" placeholder="input"/>
                                                     </span>
                                                 </div>
                                                 <div className={styles.mirror__entry}>
                                                     <span>
-                                                        <input type="text" placeholder="input" />
+                                                        <input type="text" placeholder="input"/>
                                                     </span>
                                                 </div>
                                             </div>
@@ -102,12 +104,12 @@ export const BattleGrid = () => {
                                             <div className={styles.branch}>
                                                 <div className={styles.mirror__entry}>
                                                     <span>
-                                                        <input type="text" placeholder="input" />
+                                                        <input type="text" placeholder="input"/>
                                                     </span>
                                                 </div>
                                                 <div className={styles.mirror__entry}>
                                                     <span>
-                                                        <input type="text" placeholder="input" />
+                                                        <input type="text" placeholder="input"/>
                                                     </span>
                                                 </div>
                                             </div>
@@ -117,12 +119,12 @@ export const BattleGrid = () => {
                                             <div className={styles.branch}>
                                                 <div className={styles.mirror__entry}>
                                                     <span>
-                                                        <input type="text" placeholder="input" />
+                                                        <input type="text" placeholder="input"/>
                                                     </span>
                                                 </div>
                                                 <div className={styles.mirror__entry}>
                                                     <span>
-                                                        <input type="text" placeholder="input" />
+                                                        <input type="text" placeholder="input"/>
                                                     </span>
                                                 </div>
                                             </div>
@@ -146,12 +148,12 @@ export const BattleGrid = () => {
                                         <div className={styles.branch}>
                                             <div className={styles.entry}>
                                                 <span>
-                                                    <input type="text" placeholder="input" />
+                                                    <input type="text" placeholder="input"/>
                                                 </span>
                                             </div>
                                             <div className={styles.entry}>
                                                 <span>
-                                                    <input type="text" placeholder="input" />
+                                                    <input type="text" placeholder="input"/>
                                                 </span>
                                             </div>
                                         </div>
@@ -161,12 +163,12 @@ export const BattleGrid = () => {
                                         <div className={styles.branch}>
                                             <div className={styles.entry}>
                                                 <span>
-                                                    <input type="text" placeholder="input" />
+                                                    <input type="text" placeholder="input"/>
                                                 </span>
                                             </div>
                                             <div className={styles.entry}>
                                                 <span>
-                                                    <input type="text" placeholder="input" />
+                                                    <input type="text" placeholder="input"/>
                                                 </span>
                                             </div>
                                         </div>
@@ -174,16 +176,29 @@ export const BattleGrid = () => {
                                 </div>
                             </div>
                             <div className={styles.entry}>
-                                <span>Player 1/2</span>
+                                <span className={styles.dropdown}>
+                                            {selectedPlayers['player_2_1_2']}
+                                    <ul className={styles.dropdown__content}>
+                                        <li className={styles.dropdown__item}
+                                            onClick={() => handleItemClick('player_2_1_2', inputValues.input_2_7)}>
+                                        </li>
+                                        <li className={styles.dropdown__item}
+                                            onClick={() => handleItemClick('player_2_1_2', inputValues.input_2_5)}>
+                                            {inputValues.input_2_5}
+                                        </li>
+                                    </ul>
+                                        </span>
                                 <div className={styles.branch}>
                                     <div className={styles.entry}>
                                         <span className={styles.dropdown}>
                                             {selectedPlayers['player_2_5']}
                                             <ul className={styles.dropdown__content}>
-                                                <li className={styles.dropdown__item} onClick={() => handleItemClick('player_2_5', inputValues.input_2_5)}>
+                                                <li className={styles.dropdown__item}
+                                                    onClick={() => handleItemClick('player_2_5', inputValues.input_2_5)}>
                                                     {inputValues.input_2_5}
                                                 </li>
-                                                <li className={styles.dropdown__item} onClick={() => handleItemClick('player_2_5', inputValues.input_2_6)}>
+                                                <li className={styles.dropdown__item}
+                                                    onClick={() => handleItemClick('player_2_5', inputValues.input_2_6)}>
                                                     {inputValues.input_2_6}
                                                 </li>
                                             </ul>
@@ -191,12 +206,14 @@ export const BattleGrid = () => {
                                         <div className={styles.branch}>
                                             <div className={styles.entry}>
                                                 <span>
-                                                    <input type="text" id="input_2_5" placeholder="player 5" value={inputValues.input_2_5} onChange={handleInputChange} />
+                                                    <input type="text" id="input_2_5" placeholder="player 5"
+                                                           value={inputValues.input_2_5} onChange={handleInputChange}/>
                                                 </span>
                                             </div>
                                             <div className={styles.entry}>
                                                 <span>
-                                                    <input type="text" id="input_2_6" placeholder="player 6" value={inputValues.input_2_6} onChange={handleInputChange} />
+                                                    <input type="text" id="input_2_6" placeholder="player 6"
+                                                           value={inputValues.input_2_6} onChange={handleInputChange}/>
                                                 </span>
                                             </div>
                                         </div>
@@ -205,10 +222,12 @@ export const BattleGrid = () => {
                                         <span className={styles.dropdown}>
                                             {selectedPlayers['player_2_78']}
                                             <ul className={styles.dropdown__content}>
-                                                <li className={styles.dropdown__item} onClick={() => handleItemClick('player_2_78', inputValues.input_2_7)}>
+                                                <li className={styles.dropdown__item}
+                                                    onClick={() => handleItemClick('player_2_78', inputValues.input_2_7)}>
                                                     {inputValues.input_2_7}
                                                 </li>
-                                                <li className={styles.dropdown__item} onClick={() => handleItemClick('player_2_78', inputValues.input_2_8)}>
+                                                <li className={styles.dropdown__item}
+                                                    onClick={() => handleItemClick('player_2_78', inputValues.input_2_8)}>
                                                     {inputValues.input_2_8}
                                                 </li>
                                             </ul>
@@ -216,15 +235,18 @@ export const BattleGrid = () => {
                                         <div className={styles.branch}>
                                             <div className={styles.entry}>
                                                 <span>
-                                                    <input type="text" id="input_2_7" placeholder="player 7" value={inputValues.input_2_7} onChange={handleInputChange} />
+                                                    <input type="text" id="input_2_7" placeholder="player 7"
+                                                           value={inputValues.input_2_7} onChange={handleInputChange}/>
                                                 </span>
                                             </div>
                                             <div className={styles.entry}>
                                                 <span>
-                                                    <input type="text" id="input_2_8" placeholder="player 8" value={inputValues.input_2_8} onChange={handleInputChange} />
+                                                    <input type="text" id="input_2_8" placeholder="player 8"
+                                                           value={inputValues.input_2_8} onChange={handleInputChange}/>
                                                 </span>
                                             </div>
                                         </div>
+                                        ,
                                     </div>
                                 </div>
                             </div>

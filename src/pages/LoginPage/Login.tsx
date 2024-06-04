@@ -3,7 +3,8 @@ import { NavigateFunction, useNavigate } from 'react-router-dom';
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
-import { login } from "../services/auth.service";
+import { login } from "../../services/auth.service";
+import styles from './index.module.sass'
 
 type Props = {}
 
@@ -52,46 +53,50 @@ export const Login = (props: Props) => {
     };
 
     return (
-        <div className="login">
-            <div className="login card-container">
+        <div className={styles.login}>
+            <div className={styles.background}>
+                <img src="./src/assets/Images/homepage/vector.png" className={styles.home__vectorimg} alt = "vector image"/>
+            </div>
+            <div className={styles.login__card__container}>
                 <Formik
                     initialValues={initialValues}
                     validationSchema={validationSchema}
                     onSubmit={handleLogin}
                 >
                     <Form>
-                        <div className="form-group">
-                            <label htmlFor="username">Username</label>
-                            <Field name="username" type="text" className="form-control" />
+                        <a className={styles.form__text}>Вход</a>
+                        <div className={styles.form__group}>
+                            <label htmlFor="username"></label>
+                            <Field name="username" type="text" className={styles.form__control} placeholder="Имя пользователя"/>
                             <ErrorMessage
                                 name="username"
                                 component="div"
-                                className="alert alert-danger"
+                                className={styles.alert__danger}
                             />
                         </div>
 
-                        <div className="form-group">
-                            <label htmlFor="password">Password</label>
-                            <Field name="password" type="password" className="form-control" />
+                        <div className={styles.form__group}>
+                            <label htmlFor="password"></label>
+                            <Field name="password" type="password" className={styles.form__control} placeholder="Пароль"/>
                             <ErrorMessage
                                 name="password"
                                 component="div"
-                                className="alert alert-danger"
+                                className={styles.alert__danger}
                             />
                         </div>
 
-                        <div className="form-group">
-                            <button type="submit" className="login_btn" disabled={loading}>
+                        <div className={styles.form__group}>
+                            <button type="submit" className={styles.login__btn} disabled={loading}>
                                 {loading && (
-                                    <span className="spinner-border spinner-border-sm"></span>
+                                    <span className={styles.spinner__border}></span>
                                 )}
-                                <span>Login</span>
+                                <span>Войти</span>
                             </button>
                         </div>
 
                         {message && (
-                            <div className="form-group">
-                                <div className="alert alert-danger">
+                            <div className={styles.form__group}>
+                                <div  className={styles.alert__danger}>
                                     {message}
                                 </div>
                             </div>
