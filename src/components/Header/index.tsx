@@ -1,17 +1,15 @@
-
 import styles from './index.module.sass'
 import {Link} from 'react-router-dom'
 import {useEffect, useState} from "react";
 import * as AuthService from "../../services/auth.service";
 import EventBus from "../../common/EventBus.ts";
 // import classNames from 'classnames'
-interface Props {
-    reverse?: boolean;
-}
+// interface Props {
+//     reverse?: boolean;
+// }
 
-export const Header = (props: Props) => {
+export const Header = () => {
     const [showAdminBoard, setShowAdminBoard] = useState<boolean>(false);
-
 
 
     useEffect(() => {
@@ -41,11 +39,6 @@ export const Header = (props: Props) => {
                         <div className={styles.logo__text__ch}>chronicles</div>
                     </div>
                 </Link>
-
-
-
-
-
                 <div className={styles.header__nav__btn}>
                     {showAdminBoard && (<div className={styles.dropdown}>
                         <Link to="" className={styles.dropbtn}>Для МС</Link>
@@ -65,9 +58,7 @@ export const Header = (props: Props) => {
                     <div className={styles.header__nav__btn__calendar}>
 
                         <Link to="/Calendar" className={styles.nav__text}>Календарь</Link>
-
                     </div>
-
                 </div>
             </nav>
         </header>
