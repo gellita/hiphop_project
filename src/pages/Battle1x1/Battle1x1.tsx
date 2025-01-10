@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import styles from "./index.module.sass";
 
@@ -64,4 +65,5 @@ export const Battle1x1 = () => {
         </div>
     );
 };
+
 
