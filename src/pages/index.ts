@@ -1,4 +1,4 @@
-import {Calendarr} from "./Calendar/Calendar.tsx"
+import {Calendar} from "./Calendar.tsx"
 import {Timer} from "../components/Timer";
 import {HomePage} from "./Homepage/HomePage";
 import {BattleGrid} from "./BattleGrid/BattleGrid";
