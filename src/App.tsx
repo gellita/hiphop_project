@@ -4,8 +4,8 @@ import {Header, Footer} from './components'
 
 
 
-import {Timer, HomePage, BattleGrid, Calendarr, Login, AdminPage} from './pages'
-
+import {Battle1x1, HomePage, BattleGrid, Calendar, Login, AdminPage} from './pages'
+// import {useState} from "react"
 
 
 
@@ -15,7 +15,7 @@ function App() {
           <Header/>
           <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/battles" element={<Timer/>}/>
+              <Route path="/battles" element={<Battle1x1/>}/>
               <Route path="/BattleGrid" element={<BattleGrid/>}/>
               <Route path="/Calendar" element={<Calendarr/>}/>
               <Route path="/admin" element={<AdminPage/>} />
