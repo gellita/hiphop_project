@@ -18,8 +18,7 @@ export function Carousel(){
         slidesToScroll: 2,
         speed: 1000,
         arrows: false,
-        className: "slider",
-        swipeToSlide: true
+        className: "slider"
     };
 
     let sliderRef = useRef(null);
