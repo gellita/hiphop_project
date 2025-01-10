@@ -17,11 +17,11 @@ export const HomePage = () => {
             </div>
             <div className={styles.gallery}>
                 <Carousel/>
-                <div className={styles.gallery__collage}>
-                    <img src="./src/assets/Images/homepage/dancer1.png" alt = "dancer"/>
-                    <img src="./src/assets/Images/homepage/dancer2.png" alt = "dancer"/>
-                    <img src="./src/assets/Images/homepage/dancer3.png" alt = "dancer"/>
-                </div>
+                {/*<div className={styles.gallery__collage}>*/}
+                {/*    <img src="./src/assets/Images/homepage/dancer1.png" alt = "dancer"/>*/}
+                {/*    <img src="./src/assets/Images/homepage/dancer2.png" alt = "dancer"/>*/}
+                {/*    <img src="./src/assets/Images/homepage/dancer3.png" alt = "dancer"/>*/}
+                {/*</div>*/}
             </div>
         </div>
 

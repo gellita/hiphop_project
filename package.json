@@ -10,12 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/krona-one": "^5.0.13",
     "axios": "^1.7.2",
     "classname": "^0.0.0",
     "classnames": "^2.5.1",
     "express": "^4.19.2",
     "formik": "^2.4.6",
     "react": "^18.2.0",
+    "react-calendar": "^5.0.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.1",
     "react-router-dom": "^6.22.3",
@@ -25,6 +27,7 @@
     "redux-thunk": "^2.4.0",
     "remult": "^0.26.11",
     "slick-carousel": "^1.8.1",
+    "swiper": "^11.1.4",
     "tsx": "^4.10.2",
     "validator": "^13.12.0",
     "yup": "^1.4.0"
@@ -34,6 +37,7 @@
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@types/react-slick": "^0.23.13",
+    "@types/swiper": "^6.0.0",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react": "^4.2.1",
