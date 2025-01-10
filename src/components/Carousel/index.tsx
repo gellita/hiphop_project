@@ -8,7 +8,7 @@ import {useRef} from "react";
 
 
 export function Carousel(){
-    let sliderRef = useRef(null);
+
 
     const settings = {
         infinity: true,
@@ -21,6 +21,8 @@ export function Carousel(){
         className: "slider",
         swipeToSlide: true
     };
+
+    let sliderRef = useRef(null);
 
     return (
         <Slider ref={slider => (sliderRef = slider)} {...settings} className={styles.slid}>

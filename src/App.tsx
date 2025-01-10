@@ -1,5 +1,5 @@
 import './App.css'
-import {Routes, Route, useLocation} from 'react-router-dom'
+import {Routes, Route} from 'react-router-dom'
 import {Header, Footer} from './components'
 
 
@@ -8,12 +8,8 @@ import {Timer, HomePage, BattleGrid, Calendarr, Login, AdminPage} from './pages'
 
 
 function App() {
-
   return (
-
-
       <>
-          {/*<Header reverse={reverse}/>*/}
           <Header/>
           <Routes>
               <Route path="/" element={<HomePage />} />
