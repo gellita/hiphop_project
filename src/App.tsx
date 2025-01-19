@@ -3,8 +3,10 @@ import {Routes, Route, useLocation} from 'react-router-dom'
 import {Header, Footer} from './components'
 
 
+
 import {Timer, HomePage, BattleGrid, Calendarr, Login, AdminPage} from './pages'
-// import {useState} from "react"
+
+
 
 
 function App() {
