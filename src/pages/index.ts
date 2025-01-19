@@ -6,6 +6,4 @@ import {Login} from "./LoginPage/Login.tsx";
 import {AdminPage} from "./AdminPage.tsx";
 import {Battle1x1} from "./Battle1x1/Battle1x1";
 
-
 export {Calendar, Timer,HomePage, BattleGrid, Login, AdminPage, Battle1x1}
-
