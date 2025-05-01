@@ -1,7 +1,7 @@
 import './App.css'
 import {Routes, Route, useLocation} from 'react-router-dom'
 import {Header, Footer} from './components'
-import {Timer, HomePage, BattleGrid, Calendar, Login, AdminPage, Battle1x1, Role, CreateEventPage, EventPage} from './pages'
+import {Timer, HomePage, BattleGrid, Calendarr, Login, AdminPage, Battle1x1, Role, CreateEventPage, EventPage} from './pages'
 import {SignUp} from "./pages/SignUpPage/SignUp";
 // import {useState} from "react"
 
@@ -20,7 +20,7 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/battles" element={<Battle1x1/>}/>
               <Route path="/BattleGrid" element={<BattleGrid/>}/>
-              <Route path="/Calendar" element={<Calendar/>}/>
+              <Route path="/Calendar" element={<Calendarr/>}/>
               <Route path="/admin" element={<AdminPage/>} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<SignUp />} />

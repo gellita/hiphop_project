@@ -1,4 +1,4 @@
-import {Calendar} from "./Calendar.tsx"
+import {Calendarr} from "./Calendarr/Calendarr";
 import {Timer} from "../components/Timer";
 import {HomePage} from "./Homepage/HomePage";
 import {BattleGrid} from "./BattleGrid/BattleGrid";
@@ -10,4 +10,4 @@ import {Role} from "./RolePage/Role"
 import {CreateEventPage} from "./CreateEventPage/CreateEventPage";
 import {EventPage} from "./EventPage/EventPage";
 
-export {Calendar, Timer,HomePage, BattleGrid, Login, AdminPage, Battle1x1, SignUp, Role, CreateEventPage, EventPage}
+export {Calendarr, Timer,HomePage, BattleGrid, Login, AdminPage, Battle1x1, SignUp, Role, CreateEventPage, EventPage}

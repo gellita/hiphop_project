@@ -65,7 +65,7 @@ import {ru} from "date-fns/locale";
 //                     </div>
 //                 )}
 //                 </div>
-//                 <Calendar onChange={handleDateClick}
+//                 <Calendarr onChange={handleDateClick}
 //                           value={selectedDate && selectedMonth}
 //                           locale="ru-RU"/>
 //             </div>
@@ -107,7 +107,7 @@ export const Calendarr = () => {
         fetchEvents(); // первая загрузка
 
         const interval = setInterval(() => {
-            console.log('🔄 Обновление событий из Google Calendar...');
+            console.log('🔄 Обновление событий из Google Calendarr...');
             fetchEvents();
         }, 600000); // 10 минут = 600000 мс
 
@@ -175,7 +175,7 @@ export const Calendarr = () => {
         // <div className="calendar_background">
         //     <div className="calendar_conteiner">
         //         <div className="events">
-        //             <Calendar
+        //             <Calendarr
         //                 onClickDay={setSelectedDate}
         //                 tileContent={tileContent}
         //                 locale="ru-RU"
