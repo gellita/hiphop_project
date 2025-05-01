@@ -17,6 +17,23 @@ export const login = (username: string, password: string) => {
             return response.data;
         });
 };
+export const signup = (username: string, email: string, role: object, password: string) => {
+    console.log("SIHNUP")
+    return axios
+        .post(api + "signup", {
+            username,
+            email,
+            role,
+            password,
+        })
+        .then((response) => {
+            console.log(response.status)
+            if(response.status == 200){
+                login(username, password).then(r => {return r.data})
+            }
+            return response.data;
+        });
+};
 
 export const logout = () => {
     localStorage.removeItem("user");
