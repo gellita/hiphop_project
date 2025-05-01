@@ -4,20 +4,22 @@ import authHeader from "./auth-header";
 const api = "http://localhost:8080/api/battle/";
 
 
-export const createBattle = (eventId: bigint, nominationId: bigint, participantsEmails: object) => {
+export const createBattle = (name: string, eventId: number, nominationId: number, participants: string[]) => {
     return axios
         .post(api + "create", {
-            name: "8x8",
+            name,
             eventId,
             nominationId,
-            participantsEmails
+            participants
         }, { headers: authHeader() })
         .then((response) => {
             if (response.status == 200) {
                 return response.data
             }
-
             return response.data;
+        })
+        .catch((error) => {
+            console.error("Ошибка запроса:", error.response?.data || error.message);
         });
 };
 

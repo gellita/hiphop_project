@@ -1,6 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import styles from './index.module.sass';
 import { Timer } from "../../components";
+import {getBattle} from "../../services/battle.service.ts";
 
 export const BattleGrid = () => {
     const [inputValues, setInputValues] = useState({
@@ -55,6 +56,29 @@ export const BattleGrid = () => {
     const parentValue = (elementRef) => {
         return elementRef.current ? elementRef.current.innerText : '';
     };
+
+    // useEffect(() => {
+    //     const battleId = 1;
+    //     getBattle(battleId)
+    //         .then(data => {
+    //             if (!data || !data.rounds) return;
+    //
+    //             const updatedInputValues = { ...inputValues };
+    //
+    //             data.rounds.forEach((round, index) => {
+    //                 const pos = index + 1;
+    //                 if (round.firstTeam && round.secondTeam) {
+    //                     updatedInputValues[`input_1_${pos * 2 - 1}`] = round.firstTeam.name;
+    //                     updatedInputValues[`input_1_${pos * 2}`] = round.secondTeam.name;
+    //                     updatedInputValues[`input_2_${pos * 2 - 1}`] = round.firstTeam.name;
+    //                     updatedInputValues[`input_2_${pos * 2}`] = round.secondTeam.name;
+    //                 }
+    //             });
+    //
+    //             // setInputValues(updatedInputValues);
+    //         })
+    //         .catch((err) => console.error("Failed to load battle data", err));
+    // }, []);
 
     return (
         <div className={styles.battlegrid}>
