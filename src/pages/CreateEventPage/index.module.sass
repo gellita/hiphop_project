@@ -1,0 +1,121 @@
+$yellow: #FFD300
+$gray: #2C2C2C
+body
+  background-color: $gray
+  display: flex
+  justify-content: center
+
+.home
+  background-color: $gray
+  position: relative
+  display: flex
+  justify-content: center
+
+.gallery
+  background-color: $yellow
+  width: 90vw
+
+
+.home__backimg
+  position: absolute
+  width: 90vw
+  filter: grayscale(100%)
+.home__vectorimg
+  position: relative
+  width: 90vw
+.home__text__hh
+  color: white
+  font-size: 140px
+
+.home__text__ch
+  color: $gray
+  font-size: 80px
+.background
+  background-color: $yellow
+.home__text
+  position: absolute
+  top: 0
+  left: 15px
+.gallery__collage
+  display: flex
+  justify-content: space-evenly
+  padding: 50px 0
+  margin: 0
+
+  img
+    height: 300px
+    width: auto
+
+
+$yellow: #FFD300
+$gray: #2C2C2C
+
+.login__card__container
+  width: 450px
+  height: 400px
+  margin: auto
+  background-color: white
+  border-radius: 30px
+  display: flex
+  justify-content: center
+  position: absolute
+  top: 25%
+  left: 35%
+
+
+.form__control
+  border: 2px solid $gray
+  width: 300px
+  height: 35px
+  border-radius: 10px
+  margin: 15px 0
+
+form
+  text-align: center
+  justify-content: center
+  display: flex
+  flex-direction: column
+
+.form__text
+  font-size: 35px
+  margin: 10px
+
+.login__btn
+  height: 40px
+  width: 120px
+  background-color: $yellow
+  border: none
+  border-radius: 10px
+  margin: 10px
+
+.form__group span
+  font-size: 15px
+  font-weight: bold
+
+.home__vectorimg
+  position: relative
+  width: 90vw
+
+@keyframes fade
+  from
+    opacity: 1
+    visibility: visible
+
+  to
+    opacity: 0
+    visibility: hidden
+    display: none
+
+
+.alert__danger
+  animation: fade 3s ease forwards
+  color: red
+  position: absolute
+  left: 30%
+  top: 85%
+
+
+
+
+
+

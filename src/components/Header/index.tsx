@@ -53,6 +53,7 @@ export const Header = () => {
                             <Link to="/">Селекты</Link>
                             <Link to="/battles">Баттлы 1х1</Link>
                             <Link to="/BattleGrid">Турнирная таблица</Link>
+                            <Link to="/events">События</Link>
                         </div>
                     </div>
                     <div className={styles.header__nav__btn__calendar}>
