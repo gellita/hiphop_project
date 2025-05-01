@@ -1,14 +1,14 @@
 import './App.css'
 import {Routes, Route, useLocation} from 'react-router-dom'
 import {Header, Footer} from './components'
-
-
 import {Timer, HomePage, BattleGrid, Calendar, Login, AdminPage, Battle1x1, Role, CreateEventPage, EventPage} from './pages'
 import {SignUp} from "./pages/SignUpPage/SignUp";
 // import {useState} from "react"
 
 
+
 function App() {
+
 
   return (
 
