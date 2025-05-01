@@ -8,6 +8,8 @@ import {Battle1x1} from "./Battle1x1/Battle1x1";
 import{SignUp} from "./SignUpPage/SignUp";
 import {Role} from "./RolePage/Role"
 import {CreateEventPage} from "./CreateEventPage/CreateEventPage";
+import {CreateBattlePage} from "./CreateBattlePage/CreateBattlePage";
 import {EventPage} from "./EventPage/EventPage";
 
-export {Calendarr, Timer,HomePage, BattleGrid, Login, AdminPage, Battle1x1, SignUp, Role, CreateEventPage, EventPage}
+
+export {CreateBattlePage, Calendarr, Timer,HomePage, BattleGrid, Login, AdminPage, Battle1x1, SignUp, Role, CreateEventPage, EventPage}

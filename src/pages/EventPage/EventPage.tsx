@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getEventById } from "../../services/event.service";
 import styles from './index.module.sass';
+import bg from "../../assets/Images/homepage/vector.png";
+import {CreateBattlePage} from "../../pages"
+import { Modal } from "../../components/Modal";
 
 interface Nomination {
     id: number;
@@ -29,6 +32,10 @@ export const EventPage = () => {
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string>("");
 
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
+
     useEffect(() => {
         if (!id) return;
 
@@ -37,7 +44,7 @@ export const EventPage = () => {
                 setEvent(data);
                 setLoading(false);
             })
-            .catch((err) => {
+            .catch(() => {
                 setError("Ошибка при загрузке события");
                 setLoading(false);
             });
@@ -49,28 +56,37 @@ export const EventPage = () => {
 
     return (
         <div className={styles.event}>
-            <h2 className={styles.event__title}>{event.name}</h2>
-            <p><strong>Дата:</strong> {new Date(event.date).toLocaleDateString()}</p>
-            <p><strong>Город:</strong> {event.city}</p>
-            <p><strong>Место:</strong> {event.place}</p>
-
-            <div className={styles.event__section}>
-                <h3>Номинации</h3>
-                <ul>
-                    {event.nominations.map((nom) => (
-                        <li key={nom.id}>{nom.name}</li>
-                    ))}
-                </ul>
+            <div className={styles.background}>
+                <img src={bg} className={styles.home__vectorimg} alt="vector background" />
             </div>
 
-            <div className={styles.event__section}>
-                <h3>Баттлы</h3>
-                <ul>
-                    {event.battles.map((battle) => (
-                        <li key={battle.id}>{battle.name}</li>
-                    ))}
-                </ul>
+            <div className={styles.event__data}>
+                <a className={styles.event__title}>{event.name}</a>
+                <a>Дата {new Date(event.date).toLocaleDateString()}</a>
+                <a>Город: {event.city}</a>
+                <a>Место: {event.place}</a>
+
+                <div className={styles.event__section}>
+                    <h3>Баттлы</h3>
+                    <ul>
+                        {event.battles.map((battle) => (
+                            <li key={battle.id}>
+                                <a href={`/battle/${battle.id}/grid`}>{battle.name}</a>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
+                <button onClick={openModal} className={styles.modalButton}>
+                    Создание события
+                </button>
             </div>
+            {isModalOpen && (
+                <Modal onClose={closeModal}>
+                    <CreateBattlePage eventId={id} onClose={closeModal} />
+                </Modal>
+            )}
+
         </div>
     );
 };

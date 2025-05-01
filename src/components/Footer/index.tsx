@@ -1,5 +1,5 @@
 import styles from './index.module.sass'
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 
 export const Footer = () =>{
     return(
@@ -20,7 +20,7 @@ export const Footer = () =>{
                 </div>
                 <div className={styles.footer_bottom}>
                     <div className={styles.footer_bottom_prjinfo}>
-                        <Link to="/login">Вход</Link>
+                        {/*<Link to="/login">Вход</Link>*/}
                     </div>
                 </div>
             </div>
