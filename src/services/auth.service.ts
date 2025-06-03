@@ -18,7 +18,7 @@ export const login = (username: string, password: string) => {
         });
 };
 export const signup = (username: string, email: string, role: object, password: string) => {
-    console.log("SIHNUP")
+    console.log("SIGNUP")
     return axios
         .post(api + "signup", {
             username,

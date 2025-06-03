@@ -4,6 +4,7 @@ import authHeader from "./auth-header";
 const api = "http://localhost:8080/api/battle/";
 
 
+
 export const createBattle = (name: string, eventId: number, nominationId: number, participants: string[]) => {
     return axios
         .post(api + "create", {
@@ -23,7 +24,7 @@ export const createBattle = (name: string, eventId: number, nominationId: number
         });
 };
 
-export const getBattle = (id: bigint) => {
+export const getBattle = (id: number) => {
     return axios
         .get(api + id, { headers: authHeader() })
         .then((response) => {
@@ -35,9 +36,9 @@ export const getBattle = (id: bigint) => {
         });
 };
 
-export const setBattleRoundWinner = (battleId: bigint, roundId: bigint, winnerId: bigint) => {
+export const setBattleRoundWinner = (battleId: number, roundId: number, winnerId: number) => {
     return axios
-        .post(api + battleId + "/round" + roundId + "/set-winner", {
+        .post(api + battleId + "/round/" + roundId + "/set-winner", {
             winnerId
         }, { headers: authHeader() })
         .then((response) => {
