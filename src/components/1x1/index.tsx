@@ -27,15 +27,19 @@ export const Battle = ({round, battleId} : BattleProps) => {
     const [isRunning, setIsRunning] = useState<boolean>(false);
 
     useEffect(() => {
-        let timer: NodeJS.Timeout;
+        let timer: NodeJS.Timeout | undefined;
+
         if (isRunning) {
             timer = setInterval(() => {
                 setTime((prevTime) => prevTime + 10);
             }, 10);
-        } else {
-            clearInterval(timer);
         }
-        return () => clearInterval(timer);
+
+        return () => {
+            if (timer) {
+                clearInterval(timer);
+            }
+        };
     }, [isRunning]);
 
     const formatTime = (time: number) => {
@@ -55,9 +59,13 @@ export const Battle = ({round, battleId} : BattleProps) => {
     const setWinner = (round: Round, team: number) => {
         console.log(battleId);
         if (team == 1) {
-            setBattleRoundWinner(Number(battleId), round?.id, round?.firstTeam.id)
+            setBattleRoundWinner(Number(battleId), round?.id, round?.firstTeam.id).then(() => {
+                window.location.reload();
+            });
         } else {
-            setBattleRoundWinner(Number(battleId), round?.id, round?.secondTeam.id)
+            setBattleRoundWinner(Number(battleId), round?.id, round?.secondTeam.id).then(() => {
+                window.location.reload();
+            });
         }
     }
 
