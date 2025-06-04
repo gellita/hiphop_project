@@ -51,19 +51,18 @@ export const BattleGrid = () => {
         player_2_34: 'player 3/4',
         player_2_56: 'player 5/6',
         player_2_78: 'player 7/8',
+        player_1_1234: 'player 12/34',
+        player_1_5678: 'player 56/78',
+        player_2_1234: 'player 12/34',
+        player_2_5678: 'player 56/78',
+        player_1_12345678: 'Player Final',
+        player_2_12345678: 'Player Final',
         player_1_2_1: 'Select player',
         player_1_2_2: 'Select player'
     });
 
     const dancerRef = useRef(null);
-    //
-    // const handleInputChange = (event) => {
-    //     const {id, value} = event.target;
-    //     setInputValues((prevValues) => ({
-    //         ...prevValues,
-    //         [id]: value,
-    //     }));
-    // };
+
 
     const handleItemClick = (id, value) => {
         setSelectedPlayers((prevValues) => ({
@@ -81,12 +80,19 @@ export const BattleGrid = () => {
     const parentValue = (elementRef) => {
         return elementRef.current ? elementRef.current.innerText : '';
     };
-    // const {battleId} = useParams<{ id: string }>();
+
     const currentURL = window.location.href;
 
-    const openPopup = (round: Round) => {
-        setSelectedRound(round);
-        setIsPopupOpen(true);
+    const openPopup = (round: Round | undefined) => {
+        if(round && round.firstTeam != null && round.secondTeam != null) {
+            console.log('Opening popup with round:', round);
+            setSelectedRound(round);
+            setIsPopupOpen(true);
+        }
+    };
+
+    const findRoundByNumberAndPosition = (number: number, position: number): Round | undefined => {
+        return rounds.find(round => round.number === number && round.position === position);
     };
 
     const battleId = id;
@@ -117,19 +123,58 @@ export const BattleGrid = () => {
                         updatedInputValues["input_2_" + ((i + 1) - 8)] = round.secondTeam.name;
                         i += 2;
                     }
-                    if (i > 16) {
-                        console.log(round.number);
-                        if (round.position % 2 == 0) {
+                    if (round.number == 2) {
+                        if (round.position == 1) {
                             setSelectedPlayers(prev => ({
                                 ...prev,
-                                ["player_" + 1 + "_" + "56"]: round.firstTeam != null ?  round.firstTeam.name : "player 5/6",
-                                ["player_" + 1 + "_" + "78"]: round.secondTeam != null ?  round.secondTeam.name : "player 7/8",
+                                ["player_" + 1 + "_" + "12"]: round.firstTeam != null ? round.firstTeam.name : "player 1/2",
+                                ["player_" + 1 + "_" + "34"]: round.secondTeam != null ? round.secondTeam.name : "player 3/4",
                             }));
-                        } else {
+                        }
+                        if (round.position == 2) {
+                            setSelectedPlayers(prev => ({
+                                ...prev,
+                                ["player_" + 1 + "_" + "56"]: round.firstTeam != null ? round.firstTeam.name : "player 5/6",
+                                ["player_" + 1 + "_" + "78"]: round.secondTeam != null ? round.secondTeam.name : "player 7/8",
+                            }));
+                        }
+                        if (round.position == 3) {
                             setSelectedPlayers(prev => ({
                                 ...prev,
                                 ["player_" + 2 + "_" + "12"]: round.firstTeam != null ? round.firstTeam.name : "player 1/2",
                                 ["player_" + 2 + "_" + "34"]: round.secondTeam != null ? round.secondTeam.name : "player 3/4",
+                            }));
+                        }
+                        if (round.position == 4) {
+                            setSelectedPlayers(prev => ({
+                                ...prev,
+                                ["player_" + 2 + "_" + "56"]: round.firstTeam != null ? round.firstTeam.name : "player 5/6",
+                                ["player_" + 2 + "_" + "78"]: round.secondTeam != null ? round.secondTeam.name : "player 7/8",
+                            }));
+                        }
+                    }
+                    if(round.number == 3){
+                        if (round.position == 1) {
+                            setSelectedPlayers(prev => ({
+                                ...prev,
+                                ["player_" + 1 + "_" + "1234"]: round.firstTeam != null ? round.firstTeam.name : "player 12/34",
+                                ["player_" + 1 + "_" + "5678"]: round.secondTeam != null ? round.secondTeam.name : "player 56/78",
+                            }));
+                        }
+                        if (round.position == 2) {
+                            setSelectedPlayers(prev => ({
+                                ...prev,
+                                ["player_" + 2 + "_" + "1234"]: round.firstTeam != null ? round.firstTeam.name : "player 12/34",
+                                ["player_" + 2 + "_" + "5678"]: round.secondTeam != null ? round.secondTeam.name : "player 56/78",
+                            }));
+                        }
+                    }
+                    if(round.number == 4){
+                        if (round.position == 1) {
+                            setSelectedPlayers(prev => ({
+                                ...prev,
+                                ["player_" + 1 + "_" + "12345678"]: round.firstTeam != null ? round.firstTeam.name : "Player Final",
+                                ["player_" + 2 + "_" + "12345678"]: round.secondTeam != null ? round.secondTeam.name : "Player Final",
                             }));
                         }
                     }
@@ -148,10 +193,14 @@ export const BattleGrid = () => {
                 <div id="mirror_tree" className={styles.mirror_tree}>
                     <div className={styles.branch}>
                         <div className={styles.mirror__entry}>
-                            <span>Player Final</span>
+                            <span className={styles.dropdown} onClick={() => openPopup(findRoundByNumberAndPosition(3, 1))}>
+                                    {selectedPlayers['player_1_12345678']}
+                            </span>
                             <div className={styles.branch}>
                                 <div className={styles.mirror__entry}>
-                                    <span>Player 1/2</span>
+                                    <span className={styles.dropdown} onClick={() => openPopup(findRoundByNumberAndPosition(2, 1))}>
+                                    {selectedPlayers['player_1_1234']}
+                                    </span>
                                     <div className={styles.branch}>
                                         <div className={styles.mirror__entry}>
                                             <span className={styles.dropdown} onClick={() => openPopup(rounds[0])}>
@@ -197,7 +246,9 @@ export const BattleGrid = () => {
                                     </div>
                                 </div>
                                 <div className={styles.mirror__entry}>
-                                    <span>Player 1/2</span>
+                                    <span className={styles.dropdown} onClick={() => openPopup(findRoundByNumberAndPosition(2, 2))}>
+                                    {selectedPlayers['player_1_5678']}
+                                    </span>
                                     <div className={styles.branch}>
                                         <div className={styles.mirror__entry}>
                                             <span className={styles.dropdown} onClick={() => openPopup(rounds[2])}>
@@ -248,10 +299,14 @@ export const BattleGrid = () => {
 
                 <div id="tree" className={styles.tree}>
                     <div className={styles.entry}>
-                        <span>Player Final</span>
+                        <span className={styles.dropdown} onClick={() => openPopup(findRoundByNumberAndPosition(3, 2))}>
+                                    {selectedPlayers['player_2_12345678']}
+                        </span>
                         <div className={styles.branch}>
                             <div className={styles.entry}>
-                                <span>Player 1/2</span>
+                                <span className={styles.dropdown} onClick={() => openPopup(findRoundByNumberAndPosition(2, 3))}>
+                                    {selectedPlayers['player_2_1234']}
+                                </span>
                                 <div className={styles.branch}>
                                     <div className={styles.entry}>
                                         <span className={styles.dropdown} onClick={() => openPopup(rounds[4])}>
@@ -294,13 +349,8 @@ export const BattleGrid = () => {
                                 </div>
                             </div>
                             <div className={styles.entry}>
-                                <span className={styles.dropdown}>
-                                    Player 1/2
-                                    <ul className={styles.dropdown__content}>
-                                        <li className={styles.dropdown__item}>{parentValue(dancerRef)}</li>
-                                        <li className={styles.dropdown__item}>3
-                                        </li>
-                                    </ul>
+                                <span className={styles.dropdown} onClick={() => openPopup(findRoundByNumberAndPosition(2, 4))}>
+                                    {selectedPlayers['player_2_5678']}
                                 </span>
                                 <div className={styles.branch}>
                                     <div className={styles.entry}>
