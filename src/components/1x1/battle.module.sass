@@ -56,10 +56,10 @@
 
 .timer__separator
   display: inline-block
-  width: 10px // Задаём фиксированную ширину для двоеточий
+  width: 10px
   text-align: center
-  font-size: inherit // Наследуем размер шрифта от родителя
-  line-height: 1 // Для точного выравнивания
+  font-size: inherit
+  line-height: 1
 
 .controls
   display: flex
@@ -100,7 +100,10 @@
   border-radius: 50%
   background-color: gray
   margin-bottom: 10px
-  position: relative // Добавляем для псевдоэлемента
+  position: relative
+  cursor: pointer
+
+
 
   &::after
     content: ''
@@ -117,5 +120,3 @@
 .user__username
   font-size: 1rem
   font-weight: bold
-  display: flex
-  justify-content: center

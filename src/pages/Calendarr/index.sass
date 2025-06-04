@@ -261,8 +261,12 @@
 .sidebar .overlay .big-date  
   font-size: 72px 
   font-weight: 900 
-  line-height: 1 
- 
+  line-height: 1
+
+.big-date
+  font-size: 48px
+  font-family: 'NewFont', sans-serif
+
 
 .sidebar .overlay 
   font-size: 24px 
@@ -317,3 +321,38 @@
 
 .react-calendar__tile abbr 
   font-weight: 500
+
+
+.event-card
+  background: white
+  border-radius: 8px
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1)
+  padding: 16px
+  margin-bottom: 12px
+  transition: box-shadow 0.3s ease
+
+  &:hover
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2)
+
+.event-card
+  .event-info-name
+    margin: 0 0 8px 0
+    font-size: 1.2rem
+    color: #333
+    font-weight: 600    // чаще у h3 именно 600, а не 700
+
+  .event-info-place
+    margin: 0
+    color: #666
+    font-size: 1rem
+    font-weight: normal
+    line-height: 1.4
+
+  .event-info-date
+    margin: 0
+    color: #666
+    font-size: 1rem
+    font-weight: normal
+    line-height: 1.4
+
+

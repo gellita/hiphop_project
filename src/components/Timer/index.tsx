@@ -34,7 +34,6 @@ const ChangeImage = (url = '') => {
     const button = document.querySelector('button');
     button.style.backgroundImage = url;
 }
-
     return (
         <div>
             <p>{`${h.toString().padStart(2, '0')}:${m
