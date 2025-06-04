@@ -1,9 +1,10 @@
 import axios from "axios";
 import authHeader from "./auth-header";
 import { format } from "date-fns";
+import {API_BASE_URL} from "../config.ts";
 
-const api = "http://localhost:8080/api/event/";
-const api_events = "http://localhost:8080/api/events";
+const api = `${API_BASE_URL}/api/event/`;
+const api_events = `${API_BASE_URL}/api/events`;
 
 export const createEvent = (name: string, date: Date, city: string, place: string) => {
     return axios
