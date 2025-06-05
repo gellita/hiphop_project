@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import {Link, NavigateFunction, useNavigate} from 'react-router-dom';
+import { NavigateFunction, useNavigate } from 'react-router-dom';
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
-// import { signup } from "../../services/auth.service";
+import { signup } from "../../services/auth.service";
 import styles from './index.module.sass'
 
 type Props = {}
@@ -113,10 +113,9 @@ export const SignUp = (props: Props) => {
                                 {loading && (
                                     <span className={styles.spinner__border}></span>
                                 )}
-                                <span>Зарегистрироваться</span>
+                                <span>Зарегаться</span>
                             </button>
                         </div>
-                        <Link to="/login" className="login">Войти</Link>
 
                         {message && (
                             <div className={styles.form__group}>

@@ -1,7 +1,6 @@
 import axios from "axios";
-import {API_BASE_URL} from "../config.ts";
 
-const api = `${API_BASE_URL}/api/auth/`;
+const api = "http://localhost:8080/api/auth/";
 
 
 export const login = (username: string, password: string) => {
@@ -19,7 +18,7 @@ export const login = (username: string, password: string) => {
         });
 };
 export const signup = (username: string, email: string, role: object, password: string) => {
-    console.log("SIGNUP")
+    console.log("SIHNUP")
     return axios
         .post(api + "signup", {
             username,
@@ -46,6 +45,3 @@ export const getCurrentUser = () => {
 
     return null;
 };
-
-
-

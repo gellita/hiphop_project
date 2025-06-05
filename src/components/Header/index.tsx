@@ -3,21 +3,20 @@ import {Link} from 'react-router-dom'
 import {useEffect, useState} from "react";
 import * as AuthService from "../../services/auth.service";
 import EventBus from "../../common/EventBus.ts";
-import {Modal} from "../Modal";
-import {CreateEventPage} from "../../pages"; // импорт модального компонента
-
+// import classNames from 'classnames'
+// interface Props {
+//     reverse?: boolean;
+// }
 
 export const Header = () => {
     const [showAdminBoard, setShowAdminBoard] = useState<boolean>(false);
-    const [showLogout, setShowLogout] = useState<boolean>(false);
-    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
 
     useEffect(() => {
         const user = AuthService.getCurrentUser();
 
         if (user) {
-            setShowAdminBoard(user.roles.includes("ROLE_MC", "ROLE_ADMIN"));
-            setShowLogout(true);
+            setShowAdminBoard(user.roles.includes("ROLE_ADMIN"));
         }
 
         EventBus.on("logout", logOut);
@@ -30,12 +29,7 @@ export const Header = () => {
     const logOut = () => {
         AuthService.logout();
         setShowAdminBoard(false);
-        setShowLogout(false);
     };
-
-    const openModal = () => setIsModalOpen(true);
-    const closeModal = () => setIsModalOpen(false);
-
     return (
         <header className={styles.header}>
             <nav className={styles.header__nav}>
@@ -45,37 +39,29 @@ export const Header = () => {
                         <div className={styles.logo__text__ch}>chronicles</div>
                     </div>
                 </Link>
-
                 <div className={styles.header__nav__btn}>
-                    {showAdminBoard && (
-                        <div className={styles.dropdown}>
-                            <Link to="" className={styles.dropbtn}>Для МС</Link>
-                            <div className={styles.dropdown__content}>
-                                <Link to="/">Селекты</Link>
-                                <Link to="/battles">Баттлы 1х1</Link>
-                                <Link to="/BattleGrid">Турнирная таблица</Link>
-                                <button onClick={openModal} className={styles.modalButton}>Создание события</button>
-                            </div>
+                    {showAdminBoard && (<div className={styles.dropdown}>
+                        <Link to="" className={styles.dropbtn}>Для МС</Link>
+                        <div className={styles.dropdown__content}>
+                            {showAdminBoard && (<Link to="/admin">Сетка для МС</Link>)}
+                            <a href="/" className="nav-link" onClick={logOut}>Выйти из аккаунта</a>
                         </div>
-                    )}
-
+                    </div>)}
                     <div className={styles.dropdown}>
-                        {!showLogout && <Link to="/login">Вход</Link>}
-                        {showLogout && <Link to="/" onClick={logOut}>Выйти из аккаунта</Link>}
+                        <Link to="" className={styles.dropbtn}>Баттлы</Link>
+                        <div className={styles.dropdown__content}>
+                            <Link to="/">Селекты</Link>
+                            <Link to="/battles">Баттлы 1х1</Link>
+                            <Link to="/BattleGrid">Турнирная таблица</Link>
+                            <Link to="/events">События</Link>
+                        </div>
                     </div>
-
                     <div className={styles.header__nav__btn__calendar}>
+
                         <Link to="/Calendar" className={styles.nav__text}>Календарь</Link>
                     </div>
                 </div>
             </nav>
-
-            {/* Модалка с формой создания */}
-            {isModalOpen && (
-                <Modal onClose={closeModal}>
-                    <CreateEventPage onClose={closeModal} />
-                </Modal>
-            )}
         </header>
     );
 };
