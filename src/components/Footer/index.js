@@ -1,6 +1,0 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import styles from './index.module.sass';
-// import {Link} from "react-router-dom";
-export const Footer = () => {
-    return (_jsxs("footer", { children: [_jsxs("div", { className: styles.footer_content, children: [_jsx("div", { className: styles.footer_content_logo, children: _jsxs("ul", { className: styles.footer_content_logo_item, children: [_jsx("li", { className: styles.footer_content_logo_item_title, children: "HIP-HOP" }), _jsx("li", { className: styles.footer_content_logo_item_article, children: "chronicles" })] }) }), _jsx("div", { className: styles.footer_content_socialmedia, children: _jsxs("ul", { className: styles.footer_content_socialmedia_item, children: ["\u041A\u043E\u043D\u0442\u0430\u043A\u0442\u044B", _jsx("li", { className: styles.footer_content_socialmedia_item_vk, children: _jsx("a", { href: "https://vk.com/chto_tebe_nadoa", children: _jsx("img", { src: "./src/assets/Images/Icons/vkontakte.svg" }) }) })] }) }), _jsx("div", { className: styles.footer_bottom, children: _jsx("div", { className: styles.footer_bottom_prjinfo }) })] }), _jsx("div", { className: styles.footer_bottom, children: _jsx("div", { className: styles.footer_bottom_prjinfo, children: "\u00A92024" }) })] }));
-};

@@ -1,12 +1,14 @@
-import { useState } from "react";
-import {Link, NavigateFunction, useNavigate} from 'react-router-dom';
+import React, { useState } from "react";
+import { NavigateFunction, useNavigate } from 'react-router-dom';
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
 import { login } from "../../services/auth.service";
 import styles from './index.module.sass'
 
-export const Login = () => {
+type Props = {}
+
+export const Login = (props: Props) => {
     const navigate: NavigateFunction = useNavigate();
 
     const [loading, setLoading] = useState<boolean>(false);
@@ -91,7 +93,6 @@ export const Login = () => {
                                 <span>Войти</span>
                             </button>
                         </div>
-                        <Link to="/signup" className="signup">Зарегестрироваться</Link>
 
                         {message && (
                             <div className={styles.form__group}>

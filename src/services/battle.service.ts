@@ -1,31 +1,27 @@
 import axios from "axios";
 import authHeader from "./auth-header";
-import {API_BASE_URL} from "../config.ts";
 
-const api = `${API_BASE_URL}/api/battle/`;
-
+const api = "http://localhost:8080/api/battle/";
 
 
-export const createBattle = (name: string, eventId: number, nominationId: number, participants: string[]) => {
+export const createBattle = (eventId: bigint, nominationId: bigint, participantsEmails: object) => {
     return axios
         .post(api + "create", {
-            name,
+            name: "8x8",
             eventId,
             nominationId,
-            participants
+            participantsEmails
         }, { headers: authHeader() })
         .then((response) => {
             if (response.status == 200) {
                 return response.data
             }
+
             return response.data;
-        })
-        .catch((error) => {
-            console.error("Ошибка запроса:", error.response?.data || error.message);
         });
 };
 
-export const getBattle = (id: number) => {
+export const getBattle = (id: bigint) => {
     return axios
         .get(api + id, { headers: authHeader() })
         .then((response) => {
@@ -37,9 +33,9 @@ export const getBattle = (id: number) => {
         });
 };
 
-export const setBattleRoundWinner = (battleId: number, roundId: number, winnerId: number) => {
+export const setBattleRoundWinner = (battleId: bigint, roundId: bigint, winnerId: bigint) => {
     return axios
-        .post(api + battleId + "/round/" + roundId + "/set-winner", {
+        .post(api + battleId + "/round" + roundId + "/set-winner", {
             winnerId
         }, { headers: authHeader() })
         .then((response) => {
